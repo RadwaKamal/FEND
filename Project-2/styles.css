@@ -1,0 +1,42 @@
+body {
+    font-family: 'Abel', sans-serif;    
+    display: flex;
+    flex-direction: column;
+}
+
+.main-card {
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 7px 7px 2px #ddd;
+}
+
+.main-card > h3 {
+    margin-top: 8.7167px;
+}
+
+.main-card,
+.main-card > img,
+.info-card {
+    width: 300px;
+}
+
+.info-card {
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.info-card > p:first-child {
+    font-style: italic;
+}
+
+.info-card > ul {
+    list-style: none;
+    padding: 0; 
+}
+
+.info-card span {
+    font-weight: 700;
+}
