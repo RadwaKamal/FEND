@@ -1,0 +1,162 @@
+/* CSS Reset */ 
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+/* End of CSS Reset */ 
+body{
+	line-height: 1.3;
+}
+.header{
+	display: flex;
+	justify-content: space-between;
+}
+.header-hr{
+	padding: 0.08em;
+	color: transparent;
+	background-color: #ff3885;;
+	margin: 1em 0;
+}
+.name,
+.job-title{
+    font-family: 'Josefin Sans', sans-serif;
+	text-transform: uppercase;
+}
+.name{
+	font-weight: 300;
+}
+.job-title{
+	float: right;
+}
+.main-img{
+	width: 100%;
+	margin-bottom: 1em;
+}
+.main-content-title,
+.project-title,
+.project-link{
+    font-family: 'Josefin Sans', sans-serif;
+}
+.project-title,
+.project-link{
+	margin: auto;
+}
+.project-link{
+	color: #ff3885;
+}
+.main-content-title{
+	font-size: 1.5em;
+	padding: 0.5em 0;
+	color: #5d5d5d;
+}
+.projects{
+	display: flex;
+	justify-content: space-between;
+}
+.single-project{
+	display: flex;
+	flex-direction: column;
+}
+.project-title{
+	padding: 0.8em 0 0.2em 0;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: #5d5d5d;
+}
+.project-img{
+	width: 100%;
+}
+/* Responsive Design */ 
+/* small screens */ 
+@media only screen {
+	body{
+		padding: 2em 2em;
+	}
+	.name{
+		font-size: 1.2em;
+	}
+	.job-title{
+		font-size: 0.8em;
+	}
+	.logo-img{
+		width: 3em;
+	}
+	.projects{
+		flex-direction: column;
+	}
+	.single-project{
+		width: 100%;
+	}
+	.project-link{
+		padding-bottom: 0.5em;
+	}
+ } 
+
+/* medium screen, min-width: 641px */
+@media only screen and (min-width: 40.063em) {
+	body{
+		padding: 3em 5em;
+	}
+	.logo-img{
+		width: 4.2em;
+	}
+	.name{
+		font-size: 2em;
+	}
+	.job-title{
+		font-size: 0.9em;
+	}
+	.projects{
+		flex-direction: row;
+	}
+	.single-project{
+		width: 30%;
+	}
+	.project-title{
+		font-size: 0.8em;
+	}
+	.project-link{
+		font-size: 0.75em;
+	}
+ }
+
+/*  large screens, min-width: 1025px*/ 
+@media only screen and (min-width: 64.063em) { 
+	body{
+		padding: 3em 10em;
+	}
+	.project-title{
+		font-size: 1.1em;
+	}
+	.project-link{
+		font-size: 0.9em;
+	}
+}
