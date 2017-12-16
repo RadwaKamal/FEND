@@ -32,131 +32,130 @@ ol, ul {
 	list-style: none;
 }
 /* End of CSS Reset */ 
-.container{
+.container {
 	line-height: 1.3;
 }
-.header{
+.header {
 	display: flex;
 	justify-content: space-between;
-}
-.header-hr{
-	padding: 0.08em;
-	color: transparent;
-	background-color: #ff3885;;
-	margin: 1em 0;
+	border-bottom: 0.35em solid #ff3885;
+	padding-bottom: 0.9em;
 }
 .name,
-.job-title{
-    font-family: 'Josefin Sans', sans-serif;
+.job-title {
+    font-family: "Josefin Sans", sans-serif;
 	text-transform: uppercase;
 }
-.name{
+.name {
 	font-weight: 300;
 }
-.job-title{
+.job-title {
 	float: right;
 }
-.main-img{
+.main-content {
+	padding-top: 1em;
+}
+.main-img {
 	width: 100%;
 	margin-bottom: 1em;
 }
 .main-content-title,
 .project-title,
-.project-link{
-    font-family: 'Josefin Sans', sans-serif;
+.project-link {
+    font-family: "Josefin Sans", sans-serif;
 }
 .project-title,
-.project-link{
+.project-link {
 	margin: auto;
 }
-.project-link{
+.project-link {
 	color: #ff3885;
 }
-.main-content-title{
+.main-content-title {
 	font-size: 1.5em;
 	padding: 0.5em 0;
 	color: #5d5d5d;
 }
-.projects{
+.projects {
 	display: flex;
 	justify-content: space-between;
 }
-.single-project{
+.single-project {
 	display: flex;
 	flex-direction: column;
 }
-.project-title{
+.project-title {
 	padding: 0.8em 0 0.2em 0;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 	color: #5d5d5d;
 }
-.project-img{
+.project-img {
 	width: 100%;
 }
 /* Responsive Design */ 
 /* small screens */ 
 @media only screen {
-	.container{
-		padding: 2em 2em;
+	.container {
+		padding: 2em;
 	}
-	.name{
+	.name {
 		font-size: 1.2em;
 	}
-	.job-title{
+	.job-title {
 		font-size: 0.8em;
 	}
-	.logo-img{
+	.logo-img {
 		width: 3em;
 	}
-	.projects{
+	.projects {
 		flex-direction: column;
 	}
-	.single-project{
+	.single-project {
 		width: 100%;
 	}
-	.project-link{
+	.project-link {
 		padding-bottom: 0.5em;
 	}
  } 
 
 /* medium screen, min-width: 641px */
 @media only screen and (min-width: 40.063em) {
-	.container{
+	.container {
 		padding: 3em 5em;
 	}
-	.logo-img{
+	.logo-img {
 		width: 4.2em;
 	}
-	.name{
+	.name {
 		font-size: 2em;
 	}
-	.job-title{
+	.job-title {
 		font-size: 0.9em;
 	}
-	.projects{
+	.projects {
 		flex-direction: row;
 	}
-	.single-project{
+	.single-project {
 		width: 30%;
 	}
-	.project-title{
+	.project-title {
 		font-size: 0.8em;
 	}
-	.project-link{
+	.project-link {
 		font-size: 0.75em;
 	}
  }
 
 /*  large screens, min-width: 1025px*/ 
 @media only screen and (min-width: 64.063em) { 
-	.container{
+	.container {
 		padding: 3em 10em;
 	}
-	.project-title{
+	.project-title {
 		font-size: 1.1em;
 	}
-	.project-link{
+	.project-link {
 		font-size: 0.9em;
 	}
 }
