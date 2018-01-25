@@ -42,7 +42,8 @@ reset.addEventListener("click", () => {
 start_btn.addEventListener("click", (e) => {
     resetGame();
     overlay.style.background = "rgba(70, 69, 54, 0)";
-    e.target.style.visibility = "hidden";
+    start_btn.firstChild.style.visibility = "hidden";
+    start_btn.style.visibility = "hidden";
     window.setTimeout(() => overlay.style.visibility = "hidden", 500);
     timer();
 });
@@ -84,17 +85,16 @@ cards.forEach((card) => {
             hero_name = "";
             wrong_matches++;
             window.setTimeout(() => {
-                let temp_guess_ids = guess_ids;
                 let flip_containers = [];
-                temp_guess_ids.forEach((id) => {
-                    let flip_container = document.querySelector(`#${id}`).closest(".flip-container");
+                guess_ids.forEach((id) => {
+                    let flip_container = document.getElementById(`${id}`).closest(".flip");
                     flip_container.classList.add("shake");
                     flip_containers.push(flip_container);
                 });
                 window.setTimeout(() => {
                     flip_containers.forEach((flip_container) => flip_container.classList.remove("flip", "shake"));
                     guess_ids = [];
-                }, 800);
+                }, 1000);
             }, 500);
 
             // change rating if required
@@ -150,6 +150,7 @@ let resetGame = () => {
 
 let showStartOverlay = () => {
     start_btn.style.visibility = "visible";
+    start_btn.firstChild.style.visibility = "visible";
     overlay.style.background = "rgba(70, 69, 54, 0.85)";
     overlay.style.visibility = "visible";
 }
@@ -214,9 +215,11 @@ let endGame = () => {
         index == 0 ? img.src = firstSrc : (index == 1 ? img.src = scndSrc : img.src = thirdSrc);
     })
     overlay.style.background = "rgba(70, 69, 54, 0.5)";
-    overlay.style.visibility = "visible";
-    success_modal.style.visibility = "visible";
-    success_modal.classList.add("modal-animate");
+    window.setTimeout(() => {
+        overlay.style.visibility = "visible";
+        success_modal.style.visibility = "visible";
+        success_modal.classList.add("modal-animate");
+    }, 250);
 }
 
 let changeRating = () => {
