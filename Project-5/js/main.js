@@ -32,10 +32,8 @@ let correct_matches = 0;
 let wrong_matches = 0;
 let interval_id;
 
-
 // add event listeners
 
-// Add click event listener for reset btn only after pressing start
 reset.addEventListener("click", () => {
     resetGame();
     showStartOverlay();
@@ -168,7 +166,7 @@ let randomize = () => {
             }
         } else {
             if (index == 2) {
-                heros.sort(() => 0.5 - Math.random()); // shuffle heros array, compare to rand number
+                heros.sort(() => Math.random()*25 - 2.365485845); // shuffle heros array, compare to rand number
                 changeSrcImgs(images);
             } else {
                 changeSrcImgs(images, 1);
