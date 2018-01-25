@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pokemon Memory Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <main class="container">
+        <img draggable="false" class="title" src="images/title.svg" alt="matching game">
+        <div class="controls no-select">
+            <span class="left-side" id="currentRating">
+                <img draggable="false" class="rating-star" src="images/star.svg" alt="star">
+                <img draggable="false" class="rating-star" src="images/star.svg" alt="star">
+                <img draggable="false" class="rating-star" src="images/star.svg" alt="star">
+                <span class="moves"><span id="movesNumber">0</span>&nbspMoves</span>
+            </span>
+            <span class="right-side">
+                <span class="timer">00:<span id="currentMin">00</span>:<span id="currentSec">00</span></span>
+            <button class="reset" id="resetBtn"><img draggable="false" src="images/reset.svg" alt="reset"></button>
+            </span>
+        </div>
+        <div class="p-bar" id="bar">
+            <img draggable="false" class="p-bar-img" src="images/eevee.svg" alt="eevee" data-name="eevee">
+            <img draggable="false" class="p-bar-img" src="images/meowth.svg" alt="meowth" data-name="meowth">
+            <img draggable="false" class="p-bar-img" src="images/pikachu.svg" alt="pikachu" data-name="pikachu">
+            <img draggable="false" class="p-bar-img" src="images/snorlax.svg" alt="snorlax" data-name="snorlax">
+            <img draggable="false" class="p-bar-img" src="images/squirtle.svg" alt="squirtle" data-name="squirtle">
+            <img draggable="false" class="p-bar-img" src="images/zubat.svg" alt="zubat" data-name="zubat">
+            <img draggable="false" class="p-bar-img" src="images/bullbasaur.svg" alt="bullbasaur" data-name="bullbasaur">
+            <img draggable="false" class="p-bar-img" src="images/charmander.svg" alt="charmander" data-name="charmander">
+        </div>
+        <div class="playground" id="mainGame">
+            <div class="overlay-box">
+                <button id="startBtn"><img src="images/start.svg" alt="start"></button>
+            </div>
+            <div class="row">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card front"></div>
+                        <div class="card back">
+                            <img draggable="false" class="card-img" src="images/bullbasaur.svg" alt="bullbasaur">
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card front"></div>
+                        <div class="card back">
+                            <img draggable="false" class="card-img" src="images/snorlax.svg" alt="snorlax">
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card front"></div>
+                        <div class="card back">
+                            <img draggable="false" class="card-img" src="images/charmander.svg" alt="charmander">
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card front"></div>
+                        <div class="card back">
+                            <img draggable="false" class="card-img" src="images/meowth.svg" alt="meowth">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card front"></div>
+                        <div class="card back">
+                            <img draggable="false" class="card-img" src="images/squirtle.svg" alt="bullbasaur">
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card front"></div>
+                        <div class="card back">
+                            <img draggable="false" class="card-img" src="images/eevee.svg" alt="bullbasaur">
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card front"></div>
+                        <div class="card back">
+                            <img draggable="false" class="card-img" src="images/meowth.svg" alt="bullbasaur">
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card front"></div>
+                        <div class="card back">
+                            <img draggable="false" class="card-img" src="images/zubat.svg" alt="bullbasaur">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card front"></div>
+                        <div class="card back">
+                            <img draggable="false" class="card-img" src="images/zubat.svg" alt="bullbasaur">
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card front"></div>
+                        <div class="card back">
+                            <img draggable="false" class="card-img" src="images/pikachu.svg" alt="bullbasaur">
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card front"></div>
+                        <div class="card back">
+                            <img draggable="false" class="card-img" src="images/bullbasaur.svg" alt="bullbasaur">
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card front"></div>
+                        <div class="card back">
+                            <img draggable="false" class="card-img" src="images/squirtle.svg" alt="bullbasaur">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card front"></div>
+                        <div class="card back">
+                            <img draggable="false" class="card-img" src="images/snorlax.svg" alt="bullbasaur">
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card front"></div>
+                        <div class="card back">
+                            <img draggable="false" class="card-img" src="images/pikachu.svg" alt="bullbasaur">
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card front"></div>
+                        <div class="card back">
+                            <img draggable="false" class="card-img" src="images/eevee.svg" alt="bullbasaur">
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="card front"></div>
+                        <div class="card back">
+                            <img draggable="false" class="card-img" src="images/charmander.svg" alt="bullbasaur">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="successModal" class="modal" style="visibility: hidden">
+                <h1 class="modal-heading">Congrats, You made it !</h1>
+                <img class="modal-img" draggable="false" src="images/crown.svg" alt="crown">
+                <span class="modal-rating" id="finalRating">
+                    <img draggable="false" class="rating-star" src="images/star.svg" alt="star">
+                    <img draggable="false" class="rating-star" src="images/star.svg" alt="star">
+                    <img draggable="false" class="rating-star" src="images/star.svg" alt="star">
+                </span>
+                <span class="modal-time">00:<span id="finalMin">00</span>:<span id="finalSec">00</span></span>
+                <button class="modal-play-container" id="playAgain"><img class="modal-play" src="images/play.svg" alt="play-again"></button>
+            </div>
+        </div>
+    </main>
+    <div>
+        <footer class="footer">
+            <p class="footer-note">Icons made by
+                <a class="footer-link" href="https://www.flaticon.com/authors/roundicons-freebies" title="Roundicons Freebies">Roundicons Freebies</a> from
+                <a class="footer-link" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> are licensed by 
+                <a class="footer-link" href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+            </p>
+        </footer>
+    </div>
+    <script src="./js/main.js" type="module"></script>
+</body>
+
+</html>
