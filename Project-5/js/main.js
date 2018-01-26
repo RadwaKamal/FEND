@@ -30,6 +30,7 @@ let guess_ids = [];
 let number_of_moves = 0;
 let correct_matches = 0;
 let wrong_matches = 0;
+let click_disabled = false;
 let interval_id;
 
 // add event listeners
@@ -50,11 +51,12 @@ start_btn.addEventListener("click", (e) => {
 
 cards.forEach((card) => {
     card.addEventListener("click", (e) => {
+
+        if (click_disabled) return;
+
         // check if card is already flipped
         if (card.classList.contains("flip")) return;
 
-        // check if 2 cards are already flipped
-        if (guess_ids.length == 2) return;
 
         number_of_moves++;
         moves_number.innerHTML = number_of_moves;
@@ -82,20 +84,23 @@ cards.forEach((card) => {
             }
             correct_matches++;
         } else {
-            hero_name = "";
+            click_disabled = true;
             wrong_matches++;
+            let temp_guess_ids = guess_ids;
+            guess_ids = [];
+            hero_name = "";
             window.setTimeout(() => {
                 let flip_containers = [];
-                guess_ids.forEach((id) => {
+                temp_guess_ids.forEach((id) => {
                     let flip_container = document.getElementById(`${id}`).closest(".flip");
                     flip_container.classList.add("shake");
                     flip_containers.push(flip_container);
                 });
                 window.setTimeout(() => {
                     flip_containers.forEach((flip_container) => flip_container.classList.remove("flip", "shake"));
-                    guess_ids = [];
-                }, 1000);
-            }, 500);
+                    click_disabled = false;
+                }, 600);
+            }, 200);
 
             // change rating if required
             changeRating();
