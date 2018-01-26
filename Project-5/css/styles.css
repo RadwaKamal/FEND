@@ -22,7 +22,6 @@ img,
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 75%;
     padding-bottom: 2em;
 }
 
@@ -103,6 +102,17 @@ img,
     position: relative;
 }
 
+.flip-container,
+.front,
+.back {
+    width: 6em;
+    height: 6em;
+}
+
+.card-img {
+    width: 4em;
+}
+
 .modal {
     height: 85%;
     width: 65%;
@@ -171,7 +181,7 @@ img,
     z-index: 5;
 }
 
-#startBtn {
+.start-btn {
     margin: auto;
 }
 
@@ -208,12 +218,6 @@ img,
     transform: rotateY(180deg);
 }
 
-.flip-container,
-.front,
-.back {
-    width: 6em;
-    height: 6em;
-}
 
 
 .flip-container.flip .flipper {
@@ -246,6 +250,7 @@ img,
 
 .footer-note {
     margin: auto;
+    text-align: center;
 }
 
 .footer-link {
@@ -258,6 +263,121 @@ img,
     animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
+}
+
+/* Responsive Design */ 
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+    .title {
+        width: 7em;
+        padding-bottom: 1em;
+    }
+    .moves {
+        padding-left: 1em;
+    }
+    .controls {
+        width: 20em;
+    }
+    .p-bar {
+        width: 80%;
+    }
+    .playground {
+        width: 95%;
+        height: 20em;
+    }
+    .start-btn img,
+    .right-side {
+        width: 7em;
+    }
+    .flip-container,
+    .front,
+    .back {
+        width: 4em;
+        height: 4em;
+    }
+    .card-img {
+        width: 3em;
+    }
+    .modal {
+        top: -6em;
+    }
+    .modal-heading {
+        font-size: 1em;
+    }
+    .modal-img {
+        width: 6em;
+    }
+    .modal-play {
+        width: 7em;
+    }
+    .modal-animate {
+        transform: translateY(16em);
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 599px){
+    .title {
+        width: 10em;
+    }
+    .playground {
+        height: 22em;     
+        width: 90%;  
+    }
+    .flip-container,
+    .front,
+    .back {
+        width: 5em;
+        height: 5em;
+    }
+    .card-img {
+        width: 4em;
+    }
+    .controls {
+        width: 22em;
+    }
+    .modal {
+        top: -11.3em;
+        bottom: 15em;
+    }
+    .modal-play {
+        width: 8em;
+    }
+    .modal-img {
+        width: 7em;
+    }
+    .modal-heading {
+        font-size: 1.3em;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 767px){
+    .container {
+        width: 100%;
+    }
+    .playground {
+        width: 90%;
+        height: 27em;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .container { 
+        width: 75%;
+    }
+    .flip-container,
+    .front,
+    .back {
+        width: 6em;
+        height: 6em;
+    }
+    .card-img {
+        width: 4em;
+    }
+    .playground {
+        width: 40em;
+        height: 30em;
+    }
+    .start-btn img {
+        width: auto;
+    }
 }
 
 @keyframes shake {
