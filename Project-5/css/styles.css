@@ -85,8 +85,11 @@ img,
     z-index: 10;
 }
 
-.p-bar-img-animate {
+.shake-rotate-magnify {
     animation: shake-rotate 0.1s ease-in-out 0.1s 10 alternate, magnify 0.4s ease-in-out 0.2s;
+}
+.shake-rotate {
+		animation: shake-rotate 0.1s ease-in-out 0.1s 3 alternate;
 }
 
 .playground {
