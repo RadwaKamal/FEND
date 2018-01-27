@@ -15,4 +15,4 @@ This is part of Udacity Frontend Nanodegree, Vanilla JS memory game themed by po
 - CSS shake animation from [“Shake” CSS Keyframe Animation](https://css-tricks.com/snippets/css/shake-css-keyframe-animation/) by [Sarah Drasner](https://twitter.com/sarah_edo)
 - Icons made by [Roundicons Freebies](https://www.flaticon.com/authors/roundicons-freebies) from [www.flaticon.com](https://www.flaticon.com/) are licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/)
 
-[Play the game now](http://splendid-pets.surge.sh) :tada:
+[Play the game now](http://groovy-cannon.surge.sh) :tada:
