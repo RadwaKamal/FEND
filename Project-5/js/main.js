@@ -46,7 +46,7 @@ start_btn.addEventListener("click", (e) => {
     start_btn.firstChild.style.visibility = "hidden";
     start_btn.style.visibility = "hidden";
     window.setTimeout(() => overlay.style.visibility = "hidden", 500);
-		timer();
+	timer();
 });
 
 cards.forEach((card) => {
@@ -57,30 +57,29 @@ cards.forEach((card) => {
         // check if card is already flipped
         if (card.classList.contains("flip")) return;
 
-
         number_of_moves++;
         moves_number.innerHTML = number_of_moves;
         card.classList.add("flip");
 
-        let card_img = e.target.parentElement.querySelector(".card-img");
+        let card_img = card.querySelector(".card-img");
         let card_name = card_img.getAttribute("data-name");
         guess_ids.push(card_img.id);
-				
-				let bar_img = bar.querySelector(`[data-name='${card_name}']`);
-				if (bar_img.src.indexOf(`${card_name}`) == -1) {
-						bar_img.src = `images/${card_name}.svg`;	
-						bar_img.classList.add("shake-rotate");
-				}	
-				
+
+		let bar_img = bar.querySelector(`[data-name='${card_name}']`);
+		if (bar_img.src.indexOf(`${card_name}`) == -1) {
+			bar_img.src = `images/${card_name}.svg`;	
+			bar_img.classList.add("shake-rotate");
+		}	
+		
         if (!hero_name) {
-            hero_name = card_name;
+			hero_name = card_name;
         } else if (hero_name == card_name) {
             hero_name = "";
-            guess_ids = [];
-
+			guess_ids = [];
+			
             // show corresponding pokemon bar img
-						bar_img.style.opacity = 1;
-            bar_img.classList.remove("shake-rotate");
+			bar_img.style.opacity = 1;
+			bar_img.classList.remove("shake-rotate");
             bar_img.classList.add("shake-rotate-magnify");
 
             // user has won the game :tada:
@@ -91,25 +90,27 @@ cards.forEach((card) => {
             correct_matches++;
         } else {
             click_disabled = true;
-            wrong_matches++;
-            let temp_guess_ids = guess_ids;
-            guess_ids = [];
+			wrong_matches++;
             hero_name = "";
             window.setTimeout(() => {
-                let flip_containers = [];
-                temp_guess_ids.forEach((id) => {
-                    let flip_container = document.getElementById(`${id}`).closest(".flip");
-                    flip_container.classList.add("shake");
-                    flip_containers.push(flip_container);
-                });
-                window.setTimeout(() => {
-                    flip_containers.forEach((flip_container) => flip_container.classList.remove("flip", "shake"));
-                    click_disabled = false;
-                }, 600);
-            }, 200);
+				let flip_containers = [];
+				guess_ids.forEach((id) => {
+					let flip_container = document.getElementById(`${id}`).closest(".flip");
+					flip_container.classList.add("shake");
+					flip_containers.push(flip_container);
+				});
+				window.setTimeout(() => {
+					guess_ids.forEach((id) => {
+						let flip_container = document.getElementById(`${id}`).closest(".flip");
+						flip_container.classList.remove("flip", "shake");
+					})
+					guess_ids = [];
+					click_disabled = false;
+			}, 600);
+		}, 200);
 
-            // change rating if required
-            changeRating();
+		// change rating if required
+		changeRating();
         }
     })
 });
@@ -151,12 +152,12 @@ let resetGame = () => {
 
     // reset pokemon bar 
     bar_imgs.forEach((bar_img) => {
-				bar_img.style.opacity = 0.4;
-				bar_img.src = "images/ultra-ball.svg";
-				bar_img.classList.remove("shake-rotate-magnify", "shake-rotate");
+			bar_img.style.opacity = 0.4;
+			bar_img.src = "images/ultra-ball.svg";
+			bar_img.classList.remove("shake-rotate-magnify", "shake-rotate");
 		});
 		
-		shuffleBarImgs();
+	shuffleBarImgs();
 
     // remove animation class from success modal if exists
     success_modal.classList.remove("modal-animate");
@@ -205,16 +206,16 @@ let changeSrcImgs = (images, second_half = 0) => {
 let timer = () => {
     let start = Date.now();
     interval_id = window.setInterval(() => {
-            let elapsed_seconds = Math.floor((Date.now() - start) / 1000);
-            if (elapsed_seconds > 60) {
-                let minutes = Math.floor(elapsed_seconds / 60);
-                let seconds = elapsed_seconds % 60;
-                // format number to be always of 2 digits
-                timer_min.innerHTML = minutes > 9 ? minutes : "0" + minutes;
-                timer_sec.innerHTML = seconds > 9 ? seconds : "0" + seconds;
-            } else {
-                timer_sec.innerHTML = elapsed_seconds > 9 ? elapsed_seconds : "0" + elapsed_seconds;
-            }
+		let elapsed_seconds = Math.floor((Date.now() - start) / 1000);
+		if (elapsed_seconds > 60) {
+			let minutes = Math.floor(elapsed_seconds / 60);
+			let seconds = elapsed_seconds % 60;
+			// format number to be always of 2 digits
+			timer_min.innerHTML = minutes > 9 ? minutes : "0" + minutes;
+			timer_sec.innerHTML = seconds > 9 ? seconds : "0" + seconds;
+		} else {
+			timer_sec.innerHTML = elapsed_seconds > 9 ? elapsed_seconds : "0" + elapsed_seconds;
+		}
     }, 1000);
 }
 
@@ -248,7 +249,7 @@ let changeRating = () => {
 }
 
 let shuffleBarImgs = () => {
-		for (let i = bar.children.length; i >= 0; i--) {
-				bar.appendChild(bar.children[Math.random() * i | 0]);
-		}
+	for (let i = bar.children.length; i >= 0; i--) {
+		bar.appendChild(bar.children[Math.random() * i | 0]);
+	}
 }
