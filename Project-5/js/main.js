@@ -46,7 +46,7 @@ start_btn.addEventListener("click", (e) => {
     start_btn.firstChild.style.visibility = "hidden";
     start_btn.style.visibility = "hidden";
     window.setTimeout(() => overlay.style.visibility = "hidden", 500);
-    timer();
+		timer();
 });
 
 cards.forEach((card) => {
@@ -65,7 +65,13 @@ cards.forEach((card) => {
         let card_img = e.target.parentElement.querySelector(".card-img");
         let card_name = card_img.getAttribute("data-name");
         guess_ids.push(card_img.id);
-        
+				
+				let bar_img = bar.querySelector(`[data-name='${card_name}']`);
+				if (bar_img.src.indexOf(`${card_name}`) == -1) {
+						bar_img.src = `images/${card_name}.svg`;	
+						bar_img.classList.add("shake-rotate");
+				}	
+				
         if (!hero_name) {
             hero_name = card_name;
         } else if (hero_name == card_name) {
@@ -73,9 +79,9 @@ cards.forEach((card) => {
             guess_ids = [];
 
             // show corresponding pokemon bar img
-            let bar_img = bar.querySelector(`[data-name='${card_name}']`);
-            bar_img.style.opacity = 1;
-            bar_img.classList.add("p-bar-img-animate");
+						bar_img.style.opacity = 1;
+            bar_img.classList.remove("shake-rotate");
+            bar_img.classList.add("shake-rotate-magnify");
 
             // user has won the game :tada:
             if (correct_matches == 7) {
@@ -145,9 +151,12 @@ let resetGame = () => {
 
     // reset pokemon bar 
     bar_imgs.forEach((bar_img) => {
-        bar_img.style.opacity = 0.4;
-        bar_img.classList.remove("p-bar-img-animate");
-    });
+				bar_img.style.opacity = 0.4;
+				bar_img.src = "images/ultra-ball.svg";
+				bar_img.classList.remove("shake-rotate-magnify", "shake-rotate");
+		});
+		
+		shuffleBarImgs();
 
     // remove animation class from success modal if exists
     success_modal.classList.remove("modal-animate");
@@ -236,4 +245,10 @@ let changeRating = () => {
 
     if (wrong_matches == 20)
         current_rating_imgs[0].src = "images/empty_star.svg";
+}
+
+let shuffleBarImgs = () => {
+		for (let i = bar.children.length; i >= 0; i--) {
+				bar.appendChild(bar.children[Math.random() * i | 0]);
+		}
 }
