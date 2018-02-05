@@ -159,8 +159,11 @@ let resetGame = () => {
 		
 	shuffleBarImgs();
 
-    // remove animation class from success modal if exists
-    success_modal.classList.remove("modal-animate");
+		// remove animation class from success modal if exists
+		success_modal.classList.remove("modal-animate");
+		
+		// hide success modal
+    success_modal.style.visibility = "hidden";
 }
 
 let showStartOverlay = () => {
