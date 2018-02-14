@@ -1,0 +1,19 @@
+{
+  "name": "pokemon-memory-game",
+  "version": "1.0.0",
+  "description": "memory game themed by pokemon",
+  "main": "./js/main.js",
+  "repository": "https://github.com/RadwaKamal/Front-End-Web-Developer-Nanodegree/tree/master/Project-5",
+  "author": "Radwa Kamal",
+  "license": "MIT",
+  "scripts": {
+    "front-end-test": "tape ./test/* | tap-spec"
+  },
+  "dependencies": {
+    "jsdom": "^11.6.2"
+  },
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
+  }
+}
