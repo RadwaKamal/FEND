@@ -74,7 +74,7 @@ test('test initializeGameFields function', function(t) {
 	};
 
 	t.same(actual_cache_dom, expected_cache_dom);
-	
+
 	t.end();
   });
 
@@ -102,8 +102,4 @@ test('test initializeGameFields function', function(t) {
 	} ,65000);
 
 	t.end();
-  });
-
-  test('test cacheDom function', function(){
-
   });
