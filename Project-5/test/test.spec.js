@@ -21,31 +21,25 @@ test('test initializeGameFields function', function(t) {
 	game.initializeGameFields();
 
 	const actual_hero_name = game.hero_name;
-	const expected_hero_name = "";
-	t.equal(actual_hero_name, expected_hero_name, 'hero_name should equal to empty string');
+	t.equal(actual_hero_name, "", 'hero_name should equal to empty string');
 
 	const actual_guess_ids = game.guess_ids;
-	const expected_guess_ids = [];
-	t.looseEqual(actual_guess_ids, expected_guess_ids, 'guess_ids should equal to empty list');
+	t.looseEqual(actual_guess_ids, [], 'guess_ids should equal to empty list');
 
 	const actual_number_of_moves = game.number_of_moves;
-	const expected_number_of_moves = 0;
-	t.equal(actual_number_of_moves, expected_number_of_moves, 'number_of_moves should equal to zero');
+	t.equal(actual_number_of_moves, 0, 'number_of_moves should equal to zero');
 
 	const actual_correct_matches = game.correct_matches;
-	const expected_correct_matches = 0;
-	t.equal(actual_correct_matches, expected_correct_matches, 'correct_matches should equal to zero');
+	t.equal(actual_correct_matches, 0, 'correct_matches should equal to zero');
 
 	const actual_wrong_matches = game.wrong_matches;
-	const expected_wrong_matches = 0;
-	t.equal(actual_wrong_matches, expected_wrong_matches, 'wrong_matches should equal to zero');
+	t.equal(actual_wrong_matches, 0, 'wrong_matches should equal to zero');
 
 	const actual_click_disabled = game.click_disabled;
 	t.false(actual_click_disabled, 'click_disabled should equal to false');
 
 	const actual_interval_id = game.interval_id;
-	const expected_interval_id = null;
-	t.equal(actual_interval_id, expected_interval_id, 'interval_id should equal to null');
+	t.equal(actual_interval_id, null, 'interval_id should equal to null');
 
 	t.end();
   });
@@ -93,13 +87,46 @@ test('test initializeGameFields function', function(t) {
 
 	setTimeout(() => {	
 		const actual_timer_sec = game.$timer_sec.innerHTML;
-		t.notEqual(actual_timer_sec, "00", 'timer_sec should not be 00');
+		t.notEqual(actual_timer_sec, "00", 'timer test: timer_sec should not be 00');
 	} ,3000);
 
 	setTimeout(() => {	
 		const actual_timer_min = game.$timer_min.innerHTML;
-		t.notEqual(actual_timer_min, "00", 'timer_min should not be 00');
+		t.notEqual(actual_timer_min, "00", 'timer test: timer_min should not be 00');
 	} ,65000);
 
 	t.end();
   });
+
+  test('test start function', function(t){
+	game.init();
+
+	const start_btn = document.getElementById("startBtn");
+	start_btn.click();
+	
+	const overlay_box = document.querySelector(".overlay-box"); 
+	t.equal(overlay_box.style.background, 'rgba(70, 69, 54, 0)', 'overlay box bg should be rgba(70, 69, 54, 0)');
+
+	const actual_start_child_visibility = start_btn.firstChild.style.visibility;
+	t.equal(start_btn.firstChild.style.visibility, 'hidden', 'start btn first child visibility should be hidden');
+
+	t.equal(start_btn.style.visibility, 'hidden', 'start btn visibility should be hidden');
+
+	setTimeout(() => {
+		t.equal(overlay_box.style.visibility, 'hidden', 'overlay box visibility should be hidden');	
+		
+		const actual_timer_sec = document.getElementById("currentSec").innerHTML;
+		t.notEqual(actual_timer_sec, "00", 'start btn test: timer_sec should not be 00');
+	}, 1000);
+
+	const actual_flipped_cards_count = document.querySelectorAll(".flip").length;
+	t.equal(actual_flipped_cards_count, 0, 'flipped cards count should be 0');
+
+	const actual_hero_name = game.hero_name;
+	t.equal(actual_hero_name, "", 'start btn test: hero_name should equal to empty string');
+
+	t.end();
+	
+  });
+
+  
