@@ -1,0 +1,15 @@
+# Arcade Game
+This is part of Udacity Frontend Nanodegree, Vanilla JS canvas arcade game
+
+## How to win
+- Manage to cross the cat the road without getting hit by the vehicles, Good Luck!
+
+## Refrences 
+- Icons made by [Roundicons Freebies](https://www.flaticon.com/authors/roundicons-freebies) and [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com/) 
+- Some parts of background [designed by freepik](https://www.freepik.com/free-vector/dog-and-man-with-bike-in-the-park_1283752.htm)
+
+## How to play
+- clone / download the repo
+- cd `repo_dir`
+- run `npm install` then `npm run webpack`
+- open `index.html` file and you're good to go

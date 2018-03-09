@@ -1,0 +1,27 @@
+canvas {
+	border: 1px solid black;
+	display: flex;
+	margin: auto;
+	background: url('./../images/bg.svg');			
+}
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1em;
+    font-size: 0.8em;
+    font-family: "sans";
+    font-weight: 300;
+    color: #333;
+}
+
+.footer-note {
+    margin: auto;
+    text-align: center;
+    padding-top: 0.8em;
+}
+
+.footer-link {
+    color: #444;
+    text-decoration: none;
+    font-weight: 500;
+}
