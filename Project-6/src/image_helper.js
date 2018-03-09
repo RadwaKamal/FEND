@@ -2,17 +2,16 @@
  * This is image helper for creating Image objects and caching them in case of resuing
  */
 
-/**
-* @constructor
-* @param {number} type - vehicle type
-* @param {number} speed - vehicle required speed
-* @param {string} img - vehicle img
-*/
 function image_helper() {
 
 	let cachedImgs = {};
 	let ctx;
-
+	
+	/**
+	* @load
+	* @param oneOrArr - one to create img for or array
+	* @param {object} context
+	*/
 	function load(oneOrArr, context) {
 		ctx = context;
 		if(oneOrArr instanceof Array)

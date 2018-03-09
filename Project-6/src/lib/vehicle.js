@@ -32,11 +32,17 @@ class Vehicle {
 	    this.x = -(this.w)
 	}
 
+	/**
+	* @update_x
+   	*/
 	update_x() {
 		this.x += this.dx
 		return this.x
 	}
 
+	/**
+	* @reset_x
+   	*/
 	reset_x() {
 		this.x = -(this.w)	
 		return this.x
