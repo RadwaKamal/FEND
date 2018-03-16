@@ -105,7 +105,7 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-        let feeds = []
+        let feeds = [];
 
         beforeEach(function(done) {
             loadFeed(1, function() {
