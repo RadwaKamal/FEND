@@ -35,6 +35,7 @@ $(function() {
             allFeeds.forEach((feed) => {
                 expect(feed.url).toBeDefined();
                 expect(feed.url).not.toBeNull();
+                expect($.trim(feed.url)).not.toEqual('');
             });
         });
 
@@ -48,6 +49,7 @@ $(function() {
             allFeeds.forEach((feed) => {
                 expect(feed.name).toBeDefined();
                 expect(feed.name).not.toBeNull();
+                expect($.trim(feed.name)).not.toEqual('');
             });
         });
     });
@@ -62,7 +64,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
         it('elements are hidden', function(){
-           expect($('body').attr('class')).toEqual('menu-hidden');
+           expect($('body').hasClass('menu-hidden')).toBe(true);
         });
 
          /* A test that ensures the menu changes
@@ -72,10 +74,10 @@ $(function() {
           */
         it('visibility changes', function(){
             $('.menu-icon-link').click();
-            expect($('body').attr('class')).toEqual('');
+            expect($('body').hasClass("menu-hidden")).toBe(false);
 
             $('.menu-icon-link').click();
-            expect($('body').attr('class')).toEqual('menu-hidden');  
+            expect($('body').hasClass('menu-hidden')).toBe(true);  
         });
     });
 
