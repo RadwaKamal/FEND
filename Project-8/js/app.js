@@ -58,7 +58,6 @@ function Location (location) {
 
 	$.getJSON(foursquare_call).done((data) => {
         let results = data.response.venues[0];
-        console.log(data);
         if (results) {
             let loc_info = results.location;
             self.street = loc_info.formattedAddress[0];
