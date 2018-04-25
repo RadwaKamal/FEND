@@ -10,6 +10,6 @@ Tools and Libraries
 - [Foursquare API](https://developer.foursquare.com/)
 - [Surge](https://surge.sh/) for hosting
 
-You can view the project live, [click here](cooperative-marble.surge.sh)
+You can view the project live [here](http://cooperative-marble.surge.sh)
 
 ![Neighborhood Map Screenshot](Screenshot.png)
