@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Neighborhood Map">
+    <title>Neighborhood Map</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="app">
+        <aside class="side-menu">
+            <input placeholder="Search listed locations" class="search-box" id="search" data-bind="textInput: keyword, valueUpdate: 'afterkeydown'">
+            <ul class="list-items" data-bind="foreach: filtered_locations">
+                <li data-bind="text: name, click: bounce"></li>
+            </ul>
+            <footer class="footer">Locations info are provided from Foursquare data</footer>
+        </aside>
+        <section class="map-container" id="map"></section>
+    </main>
+    <script src="js/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script src="js/knockout-3.4.2.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCMWmLHe7StdDlGztGsPUwFlxGDLiaI6pQ&callback=initApp"
+        onerror="mapError()">
+    </script>
+</body>
+</html>
